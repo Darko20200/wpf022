@@ -1,0 +1,151 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    
+    <!-- Assembly Information -->
+    <AssemblyTitle>YafesV2</AssemblyTitle>
+    <AssemblyDescription>Yet Another Free Essential Software - Version 2</AssemblyDescription>
+    <AssemblyCompany>YafesTeam</AssemblyCompany>
+    <AssemblyProduct>YafesV2</AssemblyProduct>
+    <AssemblyCopyright>Copyright © YafesTeam 2024</AssemblyCopyright>
+    <AssemblyVersion>2.0.0.0</AssemblyVersion>
+    <FileVersion>2.0.0.0</FileVersion>
+    <Version>2.0.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="8Utilities\**" />
+    <Compile Remove="Views\**" />
+    <EmbeddedResource Remove="8Utilities\**" />
+    <EmbeddedResource Remove="Views\**" />
+    <None Remove="8Utilities\**" />
+    <None Remove="Views\**" />
+    <Page Remove="8Utilities\**" />
+    <Page Remove="Views\**" />
+  </ItemGroup>
+
+  <!-- NuGet Package References -->
+  <ItemGroup>
+    <!-- System.Management for WMI operations (DriverInstaller needs this) -->
+    <PackageReference Include="System.Management" Version="8.0.0" />
+    
+    <!-- Microsoft.Win32.Registry for registry operations -->
+    <PackageReference Include="Microsoft.Win32.Registry" Version="5.0.0" />
+  </ItemGroup>
+
+  <!-- Remove conflicts -->
+  <ItemGroup>
+    <None Remove="6Resources\DiscordSetup.exe" />
+    <None Remove="6Resources\driver_booster_setup.exe" />
+    <None Remove="6Resources\EAappInstaller.exe" />
+    <None Remove="6Resources\IObit Driver Booster Pro 12.4.0.571.exe" />
+    <None Remove="6Resources\lightshot_installer.exe" />
+    <None Remove="6Resources\Loading.gif" />
+    <None Remove="6Resources\LoadingF.gif" />
+    <None Remove="6Resources\LoadingZ.gif" />
+    <None Remove="6Resources\logo.ico" />
+    <None Remove="6Resources\logo.png" />
+    <None Remove="6Resources\npp_installer.exe" />
+    <None Remove="6Resources\Opera Passwords.csv" />
+    <None Remove="6Resources\OperaSetup.exe" />
+    <None Remove="6Resources\RevoUninProSetup.exe" />
+    <None Remove="6Resources\revouninstallerpro5.lic" />
+    <None Remove="6Resources\steam_installer.exe" />
+    <None Remove="6Resources\uTorrent 3.6.0.47196.exe" />
+    <None Remove="6Resources\version.dll" />
+    <None Remove="6Resources\version_IObitDel.dll" />
+    <None Remove="6Resources\VisualStudioSetup.exe" />
+    <None Remove="6Resources\winrar-x64-711tr.exe" />
+  </ItemGroup>
+
+  <!-- Application Definition -->
+  <ItemGroup>
+    <ApplicationDefinition Include="1Main\App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+
+  <!-- XAML Pages (Views) -->
+
+  <!-- Embedded Resources (V1'den gelen dosyalar) -->
+  <ItemGroup>
+    <EmbeddedResource Include="6Resources\DiscordSetup.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6Resources\driver_booster_setup.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6Resources\EAappInstaller.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6Resources\IObit Driver Booster Pro 12.4.0.571.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6Resources\lightshot_installer.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6Resources\Loading.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6Resources\LoadingF.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6Resources\LoadingZ.gif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6Resources\logo.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6Resources\logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6Resources\npp_installer.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6Resources\Opera Passwords.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6Resources\OperaSetup.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6Resources\RevoUninProSetup.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6Resources\revouninstallerpro5.lic">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6Resources\steam_installer.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6Resources\uTorrent 3.6.0.47196.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6Resources\version.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6Resources\version_IObitDel.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6Resources\VisualStudioSetup.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6Resources\winrar-x64-711tr.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <!-- Project Folders -->
+  <ItemGroup>
+    <Folder Include="1Main\" />
+    <Folder Include="2Installers\" />
+    <Folder Include="5Repository\" />
+    <Folder Include="6Resources\" />
+  </ItemGroup>
+
+</Project>
